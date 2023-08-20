@@ -22,7 +22,6 @@ def isBombHere():
             led.plot_brightness(posX, posY, 99)
             index += 1
             game.add_score(1)
-            return None
 
 def on_button_pressed_a():
     global posX, posY
@@ -34,50 +33,49 @@ def on_button_pressed_a():
     led.plot(posX, posY)
 input.on_button_pressed(Button.A, on_button_pressed_a)
 
-class theEnd():
-    def __init__(self):
-        basic.show_leds("""
-            . . . . .
-            . . # . .
-            . # # # .
-            . . # . .
-            . . . . .
-            """)
-        basic.show_leds("""
-            . . # . .
-            . # . # .
-            # . # . #
-            . # . # .
-            . . # . .
-            """)
-        basic.show_leds("""
-            # # # # #
-            # # # # #
-            # # # # #
-            # # # # #
-            # # # # #
-            """)
-        basic.show_leds("""
-            # # # # #
-            # # . # #
-            # . . . #
-            # # . # #
-            # # # # #
-            """)
-        basic.show_leds("""
-            . # . # .
-            # . # . #
-            . # . # .
-            # . # . #
-            . # . # .
-            """)
-        basic.show_leds("""
-            . . . . .
-            . . . . .
-            . . . . .
-            . . . . .
-            . . . . .
-            """)
+def theEnd():
+    basic.show_leds("""
+        . . . . .
+        . . # . .
+        . # # # .
+        . . # . .
+        . . . . .
+        """)
+    basic.show_leds("""
+        . . # . .
+        . # . # .
+        # . # . #
+        . # . # .
+        . . # . .
+        """)
+    basic.show_leds("""
+        # # # # #
+        # # # # #
+        # # # # #
+        # # # # #
+        # # # # #
+        """)
+    basic.show_leds("""
+        # # # # #
+        # # . # #
+        # . . . #
+        # # . # #
+        # # # # #
+        """)
+    basic.show_leds("""
+        . # . # .
+        # . # . #
+        . # . # .
+        # . # . #
+        . # . # .
+        """)
+    basic.show_leds("""
+        . . . . .
+        . . . . .
+        . . . . .
+        . . . . .
+        . . . . .
+        """)
 def on_button_pressed_ab():
     isBombHere()
 input.on_button_pressed(Button.AB, on_button_pressed_ab)
@@ -102,8 +100,6 @@ rdmPosY = []
 for index3 in range(10):
     rdmPosX.append(randint(0, 4))
     rdmPosY.append(randint(0, 4))
-print(rdmPosX)
-print(rdmPosY)
 game.set_score(0)
 posX = 0
 posY = 0
